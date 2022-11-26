@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,6 +65,7 @@
             this.SaveButton = new System.Windows.Forms.Button();
             this.ZeroButton = new System.Windows.Forms.Button();
             this.FileDateLabel = new System.Windows.Forms.Label();
+            this.ValueTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -428,6 +430,13 @@
             this.FileDateLabel.TabIndex = 34;
             this.FileDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // ValueTip
+            // 
+            this.ValueTip.AutomaticDelay = 100;
+            this.ValueTip.BackColor = System.Drawing.SystemColors.Window;
+            this.ValueTip.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.ValueTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -513,6 +522,7 @@
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button ZeroButton;
         private System.Windows.Forms.Label FileDateLabel;
+        private System.Windows.Forms.ToolTip ValueTip;
     }
 }
 

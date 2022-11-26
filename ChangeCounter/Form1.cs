@@ -20,7 +20,20 @@ namespace ChangeCounter
         public MainForm()
         {
             InitializeComponent();
+            AddTip();
             updateCount();
+        }
+
+        private void AddTip()
+        {
+            foreach (Control x in this.Controls)
+            {
+                if (x.Name.Contains("Input"))
+                {
+                    ValueTip.SetToolTip(x, "Press Enter to Set\nPress Ctrl+Enter to Add");
+                    ValueTip.ToolTipTitle = "Change " + x.Name.Replace("Input", "") + " Value";
+                }
+            }
         }
 
         private void Sub_Click(object sender, EventArgs e)
@@ -60,7 +73,6 @@ namespace ChangeCounter
 
             if (e.Control && e.KeyCode == Keys.Enter)
             {
-                Console.WriteLine("AHH");
                 foreach (Control x in this.Controls)
                 {
                     if (x.Name.Replace("Count", "") == stripName && inputTxtChange.Text != "")
@@ -76,7 +88,7 @@ namespace ChangeCounter
                     {
                         if (x.Name.Replace("Count", "") == stripName)
                         {
-                            x.Text = 0.ToString();
+                            x.Text = "0";
                         }
                     }
                 }
@@ -99,7 +111,7 @@ namespace ChangeCounter
                         {
                             if (x.Name.Replace("Count", "") == stripName)
                             {
-                                x.Text = 0.ToString();
+                                x.Text = "0";
                             }
                         }
                     }
