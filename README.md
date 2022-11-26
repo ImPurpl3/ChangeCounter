@@ -18,5 +18,4 @@ Simple C# .NET Program to Help Count Change
 - All the main code is in [Form1.cs](ChangeCounter/Form1.cs)
 
 # To-Do
-- Help (?) Button
 - Online Leaderboard???
