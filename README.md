@@ -11,8 +11,8 @@ Simple C# .NET Program to Help Count Change
 
 # How to Build
 - Use Visual Studio to build or MSBuild Tools if you're good at it
-- Depends on [Newtonsoft.Json](https://www.newtonsoft.com/json) and [System.Text.Json](https://github.com/gluck/il-repack)
-- .csproj file depends on `ILRepack` to Build
+- Depends on [Newtonsoft.Json](https://www.newtonsoft.com/json) and `System.Text.Json`
+- .csproj file depends on [ILRepack](https://github.com/gluck/il-repack) to Build
 
 # Notes
 - All the main code is in [Form1.cs](ChangeCounter/Form1.cs)
