@@ -166,9 +166,35 @@ namespace ChangeCounter
             }
         }
 
+        private void updateDate(Boolean SaveOrImport, string JsonIn="")
+        {
+            if (JsonIn == "" && SaveOrImport == false)
+            {
+                DateTime dateNow = DateTime.UtcNow.ToLocalTime();
+                FileDateLabel.Text = "File is From " + dateNow.ToString("h:mm tt, MMMM dd, yyyy");
+
+            } else
+            {
+                if (SaveOrImport == true)
+                {
+                    int unixTimeStamp = 0;
+                    Int32.TryParse(JsonIn.Replace(",\"Time\":", "").Replace("}", ""), out unixTimeStamp);
+
+                    DateTime dateSaved = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+                    dateSaved = dateSaved.AddSeconds(unixTimeStamp).ToLocalTime();
+
+                    FileDateLabel.Text = "File is From " + dateSaved.ToString("h:mm tt, MMMM dd, yyyy");
+                }
+            }
+        }
+
         private void SaveBttnClick(object sender, EventArgs e)
         {
             string moneyJson = System.Text.Json.JsonSerializer.Serialize(money);
+
+            string newMoneyJson = "";
+            Int32 timeSavedUnix = (int)DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds;
+            newMoneyJson = "{" + (moneyJson.Replace("{", "").Replace("}", "")) + ",\"Time\":" + timeSavedUnix.ToString() + "}";
 
             SaveFileDialog saveJsonDiag = new SaveFileDialog();
             saveJsonDiag.Title = "Save .JSON File";
@@ -178,7 +204,8 @@ namespace ChangeCounter
 
             if (saveJsonDiag.ShowDialog() == DialogResult.OK)
             {
-                File.WriteAllText(saveJsonDiag.FileName, moneyJson);
+                File.WriteAllText(saveJsonDiag.FileName, newMoneyJson);
+                updateDate(false);
             }
         }
 
@@ -191,7 +218,13 @@ namespace ChangeCounter
             if (openJsonDiag.ShowDialog() == DialogResult.OK)
             {
                 string openedFile = File.ReadAllText(openJsonDiag.FileName);
-                money = JsonConvert.DeserializeObject<Dictionary<string, float>>(openedFile);
+
+                string timeJson = openedFile.Substring(openedFile.LastIndexOf(","));
+                string fileNoTime = openedFile.Replace(timeJson, "") + "}";
+
+                updateDate(true, timeJson);
+
+                money = JsonConvert.DeserializeObject<Dictionary<string, float>>(fileNoTime);
                 updateCount(true);
             }
         }
@@ -205,6 +238,7 @@ namespace ChangeCounter
                     x.Text = "0";
                 }
             }
+            FileDateLabel.Text = "";
             updateCount();
         }
     }

@@ -62,7 +62,8 @@
             this.NickelInput = new System.Windows.Forms.TextBox();
             this.ImportButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ZeroButton = new System.Windows.Forms.Button();
+            this.FileDateLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -183,11 +184,12 @@
             // 
             // total
             // 
+            this.total.BackColor = System.Drawing.Color.Transparent;
             this.total.Font = new System.Drawing.Font("Microsoft Sans Serif", 100F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.total.ForeColor = System.Drawing.Color.Green;
-            this.total.Location = new System.Drawing.Point(16, 264);
+            this.total.Location = new System.Drawing.Point(14, 264);
             this.total.Name = "total";
-            this.total.Size = new System.Drawing.Size(768, 153);
+            this.total.Size = new System.Drawing.Size(772, 151);
             this.total.TabIndex = 11;
             this.total.Text = "0";
             this.total.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -407,22 +409,32 @@
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveBttnClick);
             // 
-            // button1
+            // ZeroButton
             // 
-            this.button1.Location = new System.Drawing.Point(551, 418);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 33;
-            this.button1.Text = "Zero Out";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.ZeroOut);
+            this.ZeroButton.Location = new System.Drawing.Point(551, 418);
+            this.ZeroButton.Name = "ZeroButton";
+            this.ZeroButton.Size = new System.Drawing.Size(75, 23);
+            this.ZeroButton.TabIndex = 33;
+            this.ZeroButton.Text = "Zero Out";
+            this.ZeroButton.UseVisualStyleBackColor = true;
+            this.ZeroButton.Click += new System.EventHandler(this.ZeroOut);
+            // 
+            // FileDateLabel
+            // 
+            this.FileDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FileDateLabel.Location = new System.Drawing.Point(17, 416);
+            this.FileDateLabel.Name = "FileDateLabel";
+            this.FileDateLabel.Size = new System.Drawing.Size(533, 26);
+            this.FileDateLabel.TabIndex = 34;
+            this.FileDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.FileDateLabel);
+            this.Controls.Add(this.ZeroButton);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.ImportButton);
             this.Controls.Add(this.NickelInput);
@@ -499,7 +511,8 @@
         private System.Windows.Forms.TextBox NickelInput;
         private System.Windows.Forms.Button ImportButton;
         private System.Windows.Forms.Button SaveButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ZeroButton;
+        private System.Windows.Forms.Label FileDateLabel;
     }
 }
 
