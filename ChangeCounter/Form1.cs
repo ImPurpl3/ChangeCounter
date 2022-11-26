@@ -110,6 +110,13 @@ namespace ChangeCounter
                 con2VarInt();
                 double totVal = money["Nickel"] * 0.05 + money["Dime"] * 0.10 + money["Quarter"] * 0.25 + money["Loonie"] * 1.00 + money["Toonie"] * 2.00;
                 total.Text = "$" + totVal.ToString("0.00");
+                if (totVal < 0)
+                {
+                    total.ForeColor = Color.FromArgb(255, 225, 0, 0); // red
+                } else
+                {
+                    total.ForeColor = Color.Green;
+                }
             }
             else
             {

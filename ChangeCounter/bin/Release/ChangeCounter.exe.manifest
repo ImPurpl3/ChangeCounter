@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ChangeCounter.exe" size="675256">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ChangeCounter.exe" size="675768">
       <assemblyIdentity name="ChangeCounter" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>e/7K6CqiLPyBrkZJxH+IrNFlbnq0GA4qzk2oP07QBO0=</dsig:DigestValue>
+        <dsig:DigestValue>8VyBpz6S3vRK4VWB6Mh5Zm9ryK+58L1W4JVxHanC+Jc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
