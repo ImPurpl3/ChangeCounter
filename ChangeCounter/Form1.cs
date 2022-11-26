@@ -26,6 +26,8 @@ namespace ChangeCounter
 
         private void AddTip()
         {
+            HelpButtonTip.SetToolTip(HelpButton, "Press to Open GitHub Link for More Info");
+
             foreach (Control x in this.Controls)
             {
                 if (x.Name.Contains("Input"))
@@ -252,6 +254,11 @@ namespace ChangeCounter
             }
             FileDateLabel.Text = "";
             updateCount();
+        }
+
+        private void HelpBttnClick(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/ImPurpl3/ChangeCounter");
         }
     }
 }

@@ -66,6 +66,8 @@
             this.ZeroButton = new System.Windows.Forms.Button();
             this.FileDateLabel = new System.Windows.Forms.Label();
             this.ValueTip = new System.Windows.Forms.ToolTip(this.components);
+            this.HelpButton = new System.Windows.Forms.Button();
+            this.HelpButtonTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -437,11 +439,25 @@
             this.ValueTip.ForeColor = System.Drawing.SystemColors.MenuText;
             this.ValueTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
+            // HelpButton
+            // 
+            this.HelpButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.HelpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.HelpButton.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.HelpButton.Image = ((System.Drawing.Image)(resources.GetObject("HelpButton.Image")));
+            this.HelpButton.Location = new System.Drawing.Point(10, 413);
+            this.HelpButton.Name = "HelpButton";
+            this.HelpButton.Size = new System.Drawing.Size(29, 28);
+            this.HelpButton.TabIndex = 35;
+            this.HelpButton.UseVisualStyleBackColor = false;
+            this.HelpButton.Click += new System.EventHandler(this.HelpBttnClick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.HelpButton);
             this.Controls.Add(this.FileDateLabel);
             this.Controls.Add(this.ZeroButton);
             this.Controls.Add(this.SaveButton);
@@ -523,6 +539,8 @@
         private System.Windows.Forms.Button ZeroButton;
         private System.Windows.Forms.Label FileDateLabel;
         private System.Windows.Forms.ToolTip ValueTip;
+        private System.Windows.Forms.Button HelpButton;
+        private System.Windows.Forms.ToolTip HelpButtonTip;
     }
 }
 
