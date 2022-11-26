@@ -434,7 +434,6 @@
             // 
             // ValueTip
             // 
-            this.ValueTip.AutomaticDelay = 100;
             this.ValueTip.BackColor = System.Drawing.SystemColors.Window;
             this.ValueTip.ForeColor = System.Drawing.SystemColors.MenuText;
             this.ValueTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
