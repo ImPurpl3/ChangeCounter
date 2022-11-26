@@ -58,15 +58,18 @@ namespace ChangeCounter
             TextBox inputTxtChange = sender as TextBox;
             String stripName = inputTxtChange.Name.Replace("Input", "");
 
-            if (e.KeyCode == Keys.Enter)
+            if (e.Control && e.KeyCode == Keys.Enter)
             {
+                Console.WriteLine("AHH");
                 foreach (Control x in this.Controls)
                 {
                     if (x.Name.Replace("Count", "") == stripName && inputTxtChange.Text != "")
                     {
                         int a = 0;
+                        int b = 0;
                         Int32.TryParse(inputTxtChange.Text, out a);
-                        x.Text = a.ToString();
+                        Int32.TryParse(x.Text, out b);
+                        x.Text = (a + b).ToString();
                         inputTxtChange.Clear();
                     }
                     else
@@ -78,6 +81,30 @@ namespace ChangeCounter
                     }
                 }
                 updateCount();
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    foreach (Control x in this.Controls)
+                    {
+                        if (x.Name.Replace("Count", "") == stripName && inputTxtChange.Text != "")
+                        {
+                            int a = 0;
+                            Int32.TryParse(inputTxtChange.Text, out a);
+                            x.Text = a.ToString();
+                            inputTxtChange.Clear();
+                        }
+                        else
+                        {
+                            if (x.Name.Replace("Count", "") == stripName)
+                            {
+                                x.Text = 0.ToString();
+                            }
+                        }
+                    }
+                    updateCount();
+                }
             }
         }
 

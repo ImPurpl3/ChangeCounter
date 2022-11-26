@@ -334,46 +334,56 @@
             // 
             // ToonieInput
             // 
+            this.ToonieInput.AcceptsTab = true;
             this.ToonieInput.Location = new System.Drawing.Point(52, 191);
             this.ToonieInput.Name = "ToonieInput";
             this.ToonieInput.Size = new System.Drawing.Size(73, 20);
             this.ToonieInput.TabIndex = 26;
+            this.ToonieInput.TabStop = false;
             this.ToonieInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ToonieInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InputTextChanged);
             // 
             // LoonieInput
             // 
+            this.LoonieInput.AcceptsTab = true;
             this.LoonieInput.Location = new System.Drawing.Point(220, 191);
             this.LoonieInput.Name = "LoonieInput";
             this.LoonieInput.Size = new System.Drawing.Size(73, 20);
             this.LoonieInput.TabIndex = 27;
+            this.LoonieInput.TabStop = false;
             this.LoonieInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.LoonieInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InputTextChanged);
             // 
             // QuarterInput
             // 
+            this.QuarterInput.AcceptsTab = true;
             this.QuarterInput.Location = new System.Drawing.Point(397, 191);
             this.QuarterInput.Name = "QuarterInput";
             this.QuarterInput.Size = new System.Drawing.Size(73, 20);
             this.QuarterInput.TabIndex = 28;
+            this.QuarterInput.TabStop = false;
             this.QuarterInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.QuarterInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InputTextChanged);
             // 
             // DimeInput
             // 
+            this.DimeInput.AcceptsTab = true;
             this.DimeInput.Location = new System.Drawing.Point(546, 191);
             this.DimeInput.Name = "DimeInput";
             this.DimeInput.Size = new System.Drawing.Size(73, 20);
             this.DimeInput.TabIndex = 29;
+            this.DimeInput.TabStop = false;
             this.DimeInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.DimeInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InputTextChanged);
             // 
             // NickelInput
             // 
+            this.NickelInput.AcceptsTab = true;
             this.NickelInput.Location = new System.Drawing.Point(671, 191);
             this.NickelInput.Name = "NickelInput";
             this.NickelInput.Size = new System.Drawing.Size(73, 20);
             this.NickelInput.TabIndex = 30;
+            this.NickelInput.TabStop = false;
             this.NickelInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.NickelInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InputTextChanged);
             // 
