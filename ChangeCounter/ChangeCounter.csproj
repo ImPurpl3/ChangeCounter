@@ -145,12 +145,6 @@
     <Content Include="coinS.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\ILRepack.2.0.18\build\ILRepack.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ILRepack.2.0.18\build\ILRepack.props'))" />
-  </Target>
   <Target Name="ILRepack" AfterTargets="Build">
     <!-- The ILRepack task will grab all build ouput assemblies
     and merge them into a single exe file for easy distribution and integration
@@ -161,5 +155,11 @@
     </ItemGroup>
     <Error Condition="!Exists(@(ILRepackPackage->'%(FullPath)'))" Text="You are trying to use the ILRepack&#xD;&#xA;     package, but it is not installed or at the correct location" />
     <Exec Command="@(ILRepackPackage->'%(fullpath)') /xmldocs /wildcards /lib:@(NetStandardLocation) /target:winexe /out:$(OutputPath)Merged\$(AssemblyName).exe $(OutputPath)$(AssemblyName).exe $(OutputPath)*.dll" />
+  </Target>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\ILRepack.2.0.18\build\ILRepack.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ILRepack.2.0.18\build\ILRepack.props'))" />
   </Target>
 </Project>
