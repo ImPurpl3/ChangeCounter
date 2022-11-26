@@ -150,7 +150,7 @@
     and merge them into a single exe file for easy distribution and integration
     -->
     <ItemGroup>
-      <ILRepackPackage Include="$(NuGetPackageRoot)\ilrepack\*\tools\ilrepack.exe" />
+      <ILRepackPackage Include="..\packages\ILRepack.2.0.18\tools\ilrepack.exe" />
       <NetStandardLocation Include="$(NuGetPackageRoot)netstandard.library\2.0.3\build\netstandard2.0\ref" />
     </ItemGroup>
     <Error Condition="!Exists(@(ILRepackPackage->'%(FullPath)'))" Text="You are trying to use the ILRepack&#xD;&#xA;     package, but it is not installed or at the correct location" />
